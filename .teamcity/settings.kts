@@ -26,7 +26,8 @@ object INIT : BuildType({
     }
 
     steps {
-        script { """terraform init""" }
+        script {
+            scriptContent ="terraform init" }
     }
 
 })
@@ -38,7 +39,8 @@ object PLAN : BuildType({
         root(DslContext.settingsRoot)
     }
     steps {
-        script { """terraform plan""" }
+        script {
+            scriptContent ="terraform plan" }
     }
 })
 
@@ -49,7 +51,8 @@ object APPLY : BuildType({
         root(DslContext.settingsRoot)
     }
     steps {
-        script { """terraform apply""" }
+        script {
+            scriptContent ="terraform apply" }
     }
     triggers {
         vcs {
