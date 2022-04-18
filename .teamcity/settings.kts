@@ -12,16 +12,7 @@ fun com() {
 }
 
 project {
-
-//    buildType(INIT)
-//    buildType(PLAN)
     buildType(APPLY)
-
-    sequential {
-//        buildType(INIT)
-//        buildType(PLAN)
-        buildType(APPLY)
-    }
 }
 
 //object INIT : BuildType({
@@ -51,7 +42,7 @@ project {
 //})
 
 object APPLY : BuildType({
-    name = "terraform apply"
+    name = "Accept Input"
 
     vcs {
         root(DslContext.settingsRoot)
