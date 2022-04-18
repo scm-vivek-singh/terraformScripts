@@ -5,14 +5,16 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 version = "2021.2"
 
+
+
+project {
+    buildType(APPLY)
+}
+
 fun com() {
     print("Enter text: ")
     val stringInput = readLine()
     println("You entered: $stringInput")
-}
-
-project {
-    buildType(APPLY)
 }
 
 //object INIT : BuildType({
