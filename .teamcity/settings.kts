@@ -1,8 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
-
-
+import .teamcity.another
 version = "2021.2"
 
 
@@ -11,11 +10,7 @@ project {
     buildType(APPLY)
 }
 
-fun com() {
-    print("Enter text: ")
-    val stringInput = readLine()
-    println("You entered: $stringInput")
-}
+
 
 //object INIT : BuildType({
 //    name = "terraform init"
@@ -42,17 +37,21 @@ fun com() {
 //            scriptContent ="terraform plan" }
 //    }
 //})
+//fun com() {
+//    print("Enter text: ")
+//    val stringInput = readLine()
+//    println("You entered: $stringInput")
+//}
 
 object APPLY : BuildType({
-    name = "Accept Input"
+    name = "Apply"
 
     vcs {
         root(DslContext.settingsRoot)
     }
-    com()
     steps {
         script {
-            scriptContent="dir" }
+            scriptContent="python pythonX.py" }
     }
     triggers {
         vcs {
