@@ -2,9 +2,10 @@ import os
 project = os.environ['project']
 print('Hello World!!! to ', project)
 
-print("Would you like to proceed with changes.")
-response = os.environ['approval']
-if response == "yes":
-  print("Changes were applied!!!!!!!")
-else:
-  print("Exit from code!!!!!!!!!!")  
+print("DO I have your approval to proceed")
+
+while os.environ['approval'] != None:
+  if os.environ['approval'] == "yes":
+    print("Changes were applied!!!!!!!")
+  else:
+    print("Exit from code!!!!!!!!!!")  
